@@ -1,8 +1,6 @@
+require 'active_support/all'
 require 'erb'
 require "rake/testtask"
-
-# TODO: remove these & we don't need bundler
-require 'active_support/all'
 require "yard"
 
 desc "Generate file from template"
@@ -21,5 +19,7 @@ end
 
 desc "Run tests"
 Rake::TestTask.new do |t|
-  t.test_files = FileList['*.rb'] #my directory to tests is 'tests' you can change at you will
+  t.test_files = FileList['*.rb']
 end
+
+task :default => [:test]

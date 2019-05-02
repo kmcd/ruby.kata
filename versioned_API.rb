@@ -18,4 +18,5 @@ class VersionedApi < Minitest::Test
   #
   # class API::Billing < CurrentVersion::Billing
   # end
+  
 end

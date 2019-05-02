@@ -28,8 +28,4 @@ class ModulePrepend < Minitest::Test
   def test_should_be_first_class_ancestor
     assert_equal Bar, Foo.ancestors.first
   end
-
-  def test_that_no_other_paths_are_currently_in_use
-    #code
-  end
 end
