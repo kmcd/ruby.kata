@@ -6,10 +6,23 @@ class BlockBinding < Minitest::Test
   def setup
   end
 
-  def test_capture_context_from_blocks_current_scope
-    skip 'pending'
+  def block
+    yield
   end
 
-  def test_should_do_something_else
+  def test_capture_instance_variables_from_current_scope
+    @foo = 1
+    assert_equal( 1, block { @foo } )
+  end
+
+  def test_capture_local_variables_from_current_scope
+    bar = 2
+    assert_equal( 2, block { bar } )
+  end
+
+  def test_raises_an_exception_for_undefined_variables
+    assert_raises NameError do
+      block { baz }
+    end
   end
 end
