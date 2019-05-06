@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require "minitest/reporters"
 require 'pry'
+require 'looksee'
 
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 

@@ -1,0 +1,22 @@
+grammar FooGrammar
+  rule statement
+    replace_statement
+  end
+
+  rule replace_statement
+    "replace" sp quoted_argument sp quoted_argument spe
+  end
+
+  rule quoted_argument
+    "''" argument "''"
+  end
+
+  rule argument
+    (!"''" . )*
+  end
+
+  # TODO: figure out why the parse won't match whitespace
+  rule sp
+    [\s\t]+
+  end
+end
