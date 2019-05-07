@@ -1,9 +1,10 @@
 require 'active_support/all'
 require 'erb'
-require "rake/testtask"
-require "yard"
+require 'rake/testtask'
+require 'yard'
+require 'pry'
 
-desc "Generate file from template"
+desc 'Generate file from template'
 task :generate do
   @kata     = ENV['kata']
   template  = ERB.new File.read('template.erb')
@@ -12,14 +13,15 @@ task :generate do
   File.write file_name, template.result(binding)
 end
 
-desc "Generate documentation"
+desc 'Generate documentation'
 YARD::Rake::YardocTask.new do |t|
   t.files = ['*.rb']
 end
 
-desc "Run tests"
+desc 'Run tests'
 Rake::TestTask.new do |t|
-  t.test_files = FileList['*.rb']
+  t.test_files = FileList['*.rb'].
+    reject {|_| _[/foo/] }
 end
 
 task :default => [:test]

@@ -20,15 +20,12 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
-    polyglot (0.3.5)
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     rake (12.3.2)
     ruby-progressbar (1.10.0)
     thread_safe (0.3.6)
-    treetop (1.6.10)
-      polyglot (~> 0.3)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     yard (0.9.19)
@@ -42,8 +39,7 @@ DEPENDENCIES
   minitest-reporters
   pry
   rake
-  treetop
   yard
 
 BUNDLED WITH
-   1.17.2
+   2.0.1
