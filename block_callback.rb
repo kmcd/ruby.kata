@@ -12,6 +12,7 @@ class BlockCallback < Minitest::Test
       @after_execute = []
     end
 
+    # foo
     def execute(command)
       with_callbacks do
         puts command
@@ -25,7 +26,7 @@ class BlockCallback < Minitest::Test
     def after_execute(&block)
       @after_execute << block
     end
-
+    
     def with_callbacks
       @before_execute.each &:call
       result = yield

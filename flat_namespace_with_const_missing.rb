@@ -5,4 +5,8 @@ class FlatNamespaceWithConstMissing < Minitest::Test
   # @!visibility private
   def setup
   end
+
+  def test_create_module_namespace_dynamically
+    skip 'Not possible methinks ...'
+  end
 end
